@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const state = {
     round: 1,
     player: {
-      maxHP: 111111111700, hp: 1111111111700,
-      energie: 11111180, force: 1111111111111180, trans: 40,
+      maxHP: 700, hp: 700,
+      energie: 80, force: 80, trans: 40,
       resSpec: 40, resReal: 20, resGlob: 10,
       supSpec: 0, supReal: 0, supBrut: 0,
       speed: 200, crit: 0,
