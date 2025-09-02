@@ -3,25 +3,25 @@
 const BOSSES = {
   nord: {
     name: "Mage puissant Vegazertyaze",
-    maxHP: 50000,
-    hp: 50000,
-    energie: 800,
-    force: 600,
-    trans: 300,
+    maxHP: 100000,
+    hp: 100000,
+    energie: 10000,
+    force: 10,
+    trans: 10,
     resSpec: 200,
     resReal: 250,
     resGlob: 150,
-    supSpec: 50,
+    supSpec: 400,
     supReal: 50,
     supBrut: 30,
     speed: 250,
-    crit: 20
+    crit: 0
   },
 
   sud: {
     name: "Chien robot assasin Rexilien",
-    maxHP: 6000,
-    hp: 6000,
+    maxHP: 60000,
+    hp: 60000,
     energie: 0,
     force: 100000,
     trans: 0,
@@ -37,14 +37,14 @@ const BOSSES = {
 
   est: {
     name: "Spectre bienveillant",
-    maxHP: 450000,
-    hp: 45000,
-    energie: 1200,
+    maxHP: 200000,
+    hp: 200000,
+    energie: 6200,
     force: 400,
     trans: 500,
-    resSpec: 250,
-    resReal: 200,
-    resGlob: 250,
+    resSpec: 2000,
+    resReal: 2000,
+    resGlob: 2000,
     supSpec: 80,
     supReal: 30,
     supBrut: 40,
@@ -54,8 +54,8 @@ const BOSSES = {
 
   ouest: {
     name: "Cousin de phenox le malicieux",
-    maxHP: 4000000,
-    hp: 4000000,
+    maxHP: 10000000,
+    hp: 10000000,
     energie: 10,
     force: 10,
     trans: 10,

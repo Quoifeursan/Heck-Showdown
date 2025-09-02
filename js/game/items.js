@@ -98,10 +98,10 @@
  { 
     id: 'kanon', 
     name: 'Canon anhiliateur de forme vivante SYL4321', 
-    desc: "Chaque attaque infligée vous auguemente votre energie de 1%",
+    desc: "Chaque ennemi tué vous auguemente votre energie de 1%",
     unlockRound: 103, maxRound: 200, 
     zones: ['nord'], 
-    onAttack: (ctx) => { ctx.player.energie += ctx.player.energie * 0.01; ctx.player.stacks.kanon = (ctx.player.stacks.kanon || 0) + 1;} 
+    onKill: (ctx) => { ctx.player.energie += ctx.player.energie * 0.01; ctx.player.stacks.kanon = (ctx.player.stacks.kanon || 0) + 1;} 
 },
 {
   id: 'manaburn',
@@ -141,7 +141,7 @@
     id: 'berserkerMask',
     name: 'Lame du sang millinéaire',
     desc: 'Plus vos PV sont bas, plus vos dégâts augmentent (jusqu\'à +300%)',
-    unlockRound: 35,
+    unlockRound: 103, maxRound: 200,
     zones: ['sud'], 
     onDamage: (ctx, dmg) => {
       const hpPercent = ctx.player.hp / ctx.player.maxHP;
@@ -149,18 +149,21 @@
       return Math.floor(dmg * multiplier);
     }
   },
-  {
-    id: 'berserkerMask',
-    name: 'Lance éxécutrice ',
-    desc: 'Plus vos PV sont bas, plus vos dégâts augmentent (jusqu\'à +300%)',
-    unlockRound: 35,
-    zones: ['sud'], 
-    onDamage: (ctx, dmg) => {
-      const hpPercent = ctx.player.hp / ctx.player.maxHP;
-      const multiplier = 1 + (3 * (1 - hpPercent)); // 1x à 100% PV, 4x à 0% PV
-      return Math.floor(dmg * multiplier);
+{
+  id: 'executionlance',
+  name: 'Lance exécutrice',
+  desc: 'Achève instantanément les ennemis ayant moins de 10% de leurs PV max.',
+  unlockRound: 103, maxRound: 200,
+  zones: ['sud'],
+  onAttack: (ctx, dmg) => {
+    const threshold = ctx.monster.maxHP * 0.1;
+    if (ctx.monster.hp <= threshold) {
+      ctx.monster.hp = 0; // Exécution
     }
-  },
+    return dmg; // Sinon dégâts normaux
+  }
+},
+
   {
   id: 'bloodarmor',
   name: 'Armure écarlate',
