@@ -2,7 +2,7 @@
 
 const BOSSES = {
   nord: {
-    name: "Mage puissant Vegazertyaze",
+    name: "⚠ BOSS Mage puissant Vegazertyaze",
     maxHP: 100000,
     hp: 100000,
     energie: 10000,
@@ -19,7 +19,7 @@ const BOSSES = {
   },
 
   sud: {
-    name: "Chien robot assasin Rexilien",
+    name: "⚠ BOSS Chien robot assasin Rexilien",
     maxHP: 60000,
     hp: 60000,
     energie: 0,
@@ -36,7 +36,7 @@ const BOSSES = {
   },
 
   est: {
-    name: "Spectre bienveillant",
+    name: "⚠ BOSS Spectre bienveillant",
     maxHP: 200000,
     hp: 200000,
     energie: 6200,
@@ -53,7 +53,7 @@ const BOSSES = {
   },
 
   ouest: {
-    name: "Cousin de phenox le malicieux",
+    name: "⚠ BOSS Cousin de phenox le malicieux",
     maxHP: 10000000,
     hp: 10000000,
     energie: 10,

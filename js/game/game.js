@@ -129,14 +129,14 @@ if (r === 200 && state.player.zone && typeof BOSSES !== 'undefined' && BOSSES[st
     const t = Math.max(0, r - 1);
     const growth = 1 + 0.05*t + 0.004*t*t; // doux au début, accélère lentement
     const m = {
-      name: 'adversaire',
+      name: RANDOM_NAMES[irng(0, RANDOM_NAMES.length-1)],
       maxHP: Math.floor(220 * growth * rng(1,1.03)),
       hp: 0,
       energie: Math.floor(25 * growth * rng(0.9, 1.1)),
       force: Math.floor(25 * growth * rng(0.9, 1.1)),
       trans: Math.floor(8 * growth * rng(0.9, 1.2)),
       resSpec: Math.floor(5 * growth * rng(0.9, 1.2)),
-      resReal: Math.floor(4 * growth * rng(0.9, 1.2)),
+      resReal: Math.floor(5 * growth * rng(0.9, 1.2)),
       resGlob: Math.floor(2 * growth * rng(0.9, 1.2)),
       supSpec: Math.floor(2 * growth * rng(0.8,1.3)),
       supReal: Math.floor(2 * growth * rng(0.8,1.3)),
@@ -180,6 +180,7 @@ if (r === 200 && state.player.zone && typeof BOSSES !== 'undefined' && BOSSES[st
     $('pSupBrut').textContent = p.supBrut;
 
     // Monster stats
+    $('monsterName').textContent = m.name;
     $('mEnergie').textContent = m.energie;
     $('mForce').textContent   = m.force;
     $('mTrans').textContent   = m.trans;
